@@ -1,0 +1,26 @@
+.mat-table {
+  width :100%;
+  background: #ffffff !important;
+}
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  .mat-header-cell {
+    color: black !important;
+  }
+
+  .mat-cell, .mat-footer-cell {
+    color: black;
+}
+
+.moreDetails{
+  margin-left:10px;
+}
+

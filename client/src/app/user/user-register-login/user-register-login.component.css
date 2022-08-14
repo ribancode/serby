@@ -1,0 +1,53 @@
+.loginInner .logingroup ::ng-deep .mat-form-field-infix {
+    padding: 0;
+    border-top: 0 solid transparent;
+}
+.loginInner .logingroup ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    padding: 0;
+    margin-top: 0;
+}
+.loginInner .logingroup ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0%;
+    border-radius: .75rem;
+}
+.loginInner .logingroup ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    font-size: 15px;
+    color: white;
+}
+.loginInner .mat-form-field-appearance-outline .mat-form-field-outline-start {
+    background: #bab9be;
+    border-radius: 1rem 0 0 1rem;
+    border-right-style: none;
+}
+.iti {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.password{
+    position: relative !important;
+}
+.fa-eye-slash{
+    float: right;
+    margin-right: 5px;
+    position: absolute;
+    top: 15px;
+    right: 3px;
+}
+.file-upload{
+    padding: 4px;
+}
+
+.loginInner .logingroup ::ng-deep .ngx-mat-tel-input-container {
+    color: var(--black-color);
+    border-radius: .75rem;
+    font-size: 1.2rem;
+    padding: 1.2rem .58em;
+    background: transparent;
+    border: 1px solid #9e9e9d;
+    margin-top: 0;
+}
+.loginInner .logingroup ::ng-deep .country-selector {
+    opacity: 1 !important;
+    /*bottom: 0px !important;*/
+}

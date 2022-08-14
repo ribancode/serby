@@ -1,0 +1,232 @@
+<script type="text/javascript" src="/assets/js/jquery/jquery.min.js "></script>
+<script type="text/javascript" src="/assets/js/jquery-ui/jquery-ui.min.js "></script>
+<script type="text/javascript" src="/assets/js/popper.js/popper.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="/assets/pages/waves/js/waves.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.mCustomScrollbar.concat.min.js "></script>
+<script type="text/javascript" src="/assets/js/pcoded.min.js"></script>
+<script type="text/javascript" src="/assets/js/vertical/vertical-layout.min.js "></script>
+<script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/assets/js/script.js "></script>
+<script type="text/javascript" src="/js/sweetAlert2.js"></script>
+<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
+<script>
+    if ($("#editor").length > 0) {
+        CKEDITOR.replace('editor', {
+            toolbarGroups: [
+                {
+                    "name": "basicstyles",
+                    "groups": ["basicstyles"]
+                },
+                {
+                    "name": "links",
+                    "groups": ["links"]
+                },
+                {
+                    "name": "paragraph",
+                    "groups": ["list", "blocks"]
+                },
+                {
+                    "name": "document",
+                    "groups": ["mode"]
+                },
+                {
+                    "name": "insert",
+                    "groups": ["insert"]
+                },
+                {
+                    "name": "styles",
+                    "groups": ["styles"]
+                }
+            ],
+            removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,PasteFromWord'
+        });
+    }
+</script>
+<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/js/additional-validate-methods.min.js"></script>
+<script type="text/javascript" src="/js/custom.js"></script>
+<script type="text/javascript" src="/js/toastr.min.js"></script>
+
+<script>
+    var url = window.location.pathname.split( '/' )
+    var segment = url[1];
+    if(segment == 'edit-profile' || segment == 'change-password'){
+         document.getElementById("edit-profile").className = 'waves-effect waves-dark active'
+         document.getElementById("profile-list-item1").style.display="list-item"
+         document.getElementById("profile-list-item2").style.display="list-item"
+    }
+    if(segment == 'dashboard'){
+        document.getElementById("dashboard").className = 'active' 
+    }
+    if(segment == 'manageCE' || segment == 'viewCE'){
+        document.getElementById("users").className = 'pcoded-hasmenu active pcoded-trigger'
+        document.getElementById("manageCE").className = 'active' 
+    }
+    if(segment == 'manageCustomer'){
+        document.getElementById("users").className = 'pcoded-hasmenu active pcoded-trigger'
+        document.getElementById("manageCustomer").className = 'active' 
+    }
+    if(segment == 'manageCategories' || segment == 'addCategory' || segment == 'viewCategory' || segment == 'editCategory' || segment == 'subCategory' || segment == 'addSubCategory' || segment == 'viewSubCategory' || segment == 'editSubCategory'){
+        document.getElementById("manageCategories").className = 'active' 
+    }
+    if(segment == 'ceProducts'){
+        document.getElementById("ceProducts").className = 'active' 
+    }
+    if(segment == 'ceServices'){
+        document.getElementById("ceServices").className = 'active' 
+    }
+    if(segment == 'productCommission'){
+        document.getElementById("commission").className = 'pcoded-hasmenu active pcoded-trigger'
+        document.getElementById("productCommission").className = 'active' 
+    }
+    if(segment == 'serviceCommission'){
+        document.getElementById("commission").className = 'pcoded-hasmenu active pcoded-trigger'
+        document.getElementById("serviceCommission").className = 'active' 
+    }
+    if(segment == 'productBookings' || segment == 'viewProductBooking'){
+        document.getElementById("bookings").className = 'pcoded-hasmenu active pcoded-trigger'
+        document.getElementById("productBookings").className = 'active' 
+    }
+    if(segment == 'serviceBookings' || segment == 'viewServiceBooking'){
+        document.getElementById("bookings").className = 'pcoded-hasmenu active pcoded-trigger'
+        document.getElementById("serviceBookings").className = 'active' 
+    }
+    if(segment == 'payments' || segment == 'viewPayment'){
+        document.getElementById("payments").className = 'active' 
+    }
+</script>
+
+<script>     
+$(document).on('click',".sweet-delete",function(e){
+    e.preventDefault();
+    var key = $(this).attr('data-attr-key');
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You want to delete this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.value) {
+            $('#delete-form-'+key).submit();
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            Swal.fire(
+                'Cancelled',
+                'Your record is safe.',
+                'error'
+            )
+        }
+    })
+});
+</script>
+
+<script>
+$(document).on('click',".sweet-status",function(e){
+    e.preventDefault();
+    var key = $(this).attr('data-attr-key');
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You want to change the status!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, change it!'
+    }).then((result) => {
+        if (result.value) {
+            $('#status-form-'+key).submit();
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            Swal.fire(
+                'Cancelled',
+                'Status not changed.',
+                'error'
+            )
+        }
+    })
+});
+</script>
+
+<script>
+$(document).on('click',".sweet-approve",function(e){
+    e.preventDefault();
+    var key = $(this).attr('data-attr-key');
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You want to approve the status!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, change it!'
+    }).then((result) => {
+        if (result.value) {
+            $('#approve-form-'+key).submit();
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            Swal.fire(
+                'Cancelled',
+                'approve status not changed.',
+                'error'
+            )
+        }
+    })
+});
+</script>
+
+<script>
+    $('#myTable').DataTable({
+        "order": [[ 0, "desc" ]],
+        columnDefs: [
+           { orderable: false, targets: -1 },
+           { "visible": false, "targets": 0 }
+        ]
+    });
+</script>
+
+<script>
+    $('#myTable1').DataTable({
+        "order": [[ 0, "desc" ]],
+        columnDefs: [
+           { orderable: false, targets: [1,-1,-2] },
+           { "visible": false, "targets": 0 }
+        ]
+    });
+</script>
+
+<script>
+    $('.decimalNumber').keypress(function(event) {
+        var $this = $(this);
+        if((event.which != 46 || $this.val().indexOf('.') != -1) &&
+        ((event.which < 48 || event.which > 57) &&
+        (event.which != 0 && event.which != 8))) {
+            event.preventDefault();
+        }
+
+        var text = $(this).val();
+        if((event.which == 46) && (text.indexOf('.') == -1)) {
+            setTimeout(function() {
+                if ($this.val().substring($this.val().indexOf('.')).length > 3) {
+                    $this.val($this.val().substring(0, $this.val().indexOf('.') + 3));
+                }
+            }, 1);
+        }
+
+        if((text.indexOf('.') != -1) &&
+            (text.substring(text.indexOf('.')).length > 2) &&
+            (event.which != 0 && event.which != 8) &&
+            ($(this)[0].selectionStart >= text.length - 2)) {
+                event.preventDefault();
+        }   
+    });
+    $('.decimalNumber').keyup(function(event) {
+        if($(this).val() > 100){
+            $(this).val('100.00');
+        }
+    })
+</script>
+
+{{{ toasts }}}
+

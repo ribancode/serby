@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head }}
+
+    <body>
+        {{> loader }}
+
+        <div id="pcoded" class="pcoded">
+            <div class="pcoded-overlay-box"></div>
+            <div class="pcoded-container navbar-wrapper">
+                {{> header }}
+
+                <div class="pcoded-main-container">
+                    <div class="pcoded-wrapper">
+                        {{> sidebar }}
+
+                        <div class="pcoded-content">
+                            <div class="page-header">
+                                <div class="page-block">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <div class="page-header-title">
+                                                <h5 class="m-b-10">COMMERCIAL ESTABLISHMENT</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pcoded-inner-content">
+                                <div class="main-body">
+                                    <div class="page-wrapper">
+                                        <div class="page-body">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h5>View Commercial Establishment</h5>
+                                                        </div>
+                                                        <div class="card-block">
+                                                            <div class="row">
+                                                                <div class="col-lg-3 col-md-3 col-sm-12">
+                                                                    <div class="profile text-center">
+                                                                        <img class="w-50" src="{{data.pimage}}" alt="User-Profile-Image">
+                                                                    </div>
+                                                                    <div class="profileDetail text-center mt-3">
+                                                                        <p>{{data.firstname}}</p>
+                                                                        <p>{{data.email}}</p>
+                                                                        <p>{{data.phone}}</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                    <div class="profileLeft">
+                                                                        <p><span style="font-weight: 700;">Username: </span> {{data.username}}</p>
+                                                                        <p><span style="font-weight: 700;">Store Name:</span> {{data.store_name}}</p>
+                                                                        <p><span style="font-weight: 700;">Store Open Time:</span> {{data.store_open_time}}</p>
+                                                                        <p><span style="font-weight: 700;">Store Close Time:</span> {{data.store_close_time}}</p>
+                                                                        <p><span style="font-weight: 700;">Role:</span> {{data.role}}</p>
+                                                                        <p><span style="font-weight: 700;">OTP:</span> {{data.otp}}</p>
+                                                                        <p><span style="font-weight: 700;">Verify OTP:</span> {{data.verify_otp}}</p>
+                                                                        <p><span style="font-weight: 700;">Is Approved:</span> {{#if data.is_approved}} Yes {{else}} No {{/if}} </p>
+                                                                        <p><span style="font-weight: 700;">Status:</span> {{data.status}}</p>
+                                                                        <p><span style="font-weight: 700;">Address:</span> {{data.address}}</p>
+                                                                        <p><span style="font-weight: 700;">Created At</span>:</span> {{data.created_at}}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> script }}
+
+    </body>
+</html>

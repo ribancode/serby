@@ -1,0 +1,10 @@
+.category-check {
+    display: none;
+}
+.category-check:checked + .popularBox, .category-check:checked + .otherBox, .otherBox:hover, .category-check:checked + .subItemInn {
+    box-shadow: 0 0 0.3rem 0.1rem #6610f2;
+}
+.otherBox {
+    border-radius: .5rem;
+    box-shadow: 0px 1px 4px #c1c1c1;
+}

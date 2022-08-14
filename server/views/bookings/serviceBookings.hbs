@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head }}
+
+    <body>
+        {{> loader }}
+
+        <div id="pcoded" class="pcoded">
+            <div class="pcoded-overlay-box"></div>
+            <div class="pcoded-container navbar-wrapper">
+                {{> header }}
+
+                <div class="pcoded-main-container">
+                    <div class="pcoded-wrapper">
+                        {{> sidebar }}
+
+                        <div class="pcoded-content">
+                            <div class="page-header">
+                                <div class="page-block">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <div class="page-header-title">
+                                                <h5 class="m-b-10">MANAGE BOOKINGS</h5>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Service Bookings</h5>
+                                </div>         
+                                <div class="card-block table-border-style">
+                                    <div class="table-responsive">
+                                        <table class="table" id="myTable" width="100%" cellspacing="0" data-s-dom="lrtip">
+                                            <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>User</th>
+                                                    <th>Service</th>
+                                                    <th>Final Amount (USD)</th>
+                                                    <th>Discount (%)</th>
+                                                    <th>Commission (%)</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each data}}
+
+                                                <tr>
+                                                    <td>{{this.id}}</td>
+                                                    <td>{{this.email}}</td>
+                                                    <td>{{this.title}}</td>
+                                                    <td>{{this.final_amount}}</td>
+                                                    <td>{{this.discount}}</td>
+                                                    <td>{{this.commission}}</td>
+                                                    <td>{{this.status}}</td>
+                                                    <td>
+                                                        <a href="/viewServiceBooking/{{this.id}}" data-toggle="tooltip" title="View"><i class="fa fa-eye close-card"></i></a>
+                                                    </td>
+                                                </tr>
+                                                {{/each}}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> script }}
+
+    </body>
+</html>

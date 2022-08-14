@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head }}
+
+    <body>
+        {{> loader }}
+
+        <div id="pcoded" class="pcoded">
+            <div class="pcoded-overlay-box"></div>
+            <div class="pcoded-container navbar-wrapper">
+                {{> header }}
+
+                <div class="pcoded-main-container">
+                    <div class="pcoded-wrapper">
+                        {{> sidebar }}
+
+                        <div class="pcoded-content">
+                            <div class="page-header">
+                                <div class="page-block">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <div class="page-header-title">
+                                                <h5 class="m-b-10">MANAGE BOOKINGS</h5>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pcoded-inner-content">
+                                <div class="main-body">
+                                    <div class="page-wrapper">
+                                        <div class="page-body">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h5>View Product Booking Detail</h5>
+                                                        </div>
+                                                        <div class="card-block">
+                                                           <div class="row">
+                                                                {{#each data.users}}
+                                                                    {{#ifEquals this.role 'user'}} 
+
+                                                                        <div class="col-lg-3 col-md-3 col-sm-12">
+                                                                            <div class="profile text-center">
+                                                                                <img class="w-50" src="{{this.pimage}}" alt="Image">
+                                                                            </div>
+                                                                            <div class="profileDetail text-center mt-3">
+                                                                                <p>{{this.firstname}}</p>
+                                                                                <p>{{this.email}}</p>
+                                                                                <p>{{this.phone}}</p>
+                                                                                <p>CUSTOMER</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    {{/ifEquals}}
+                                                                {{/each}}
+
+                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                    <div class="profileLeft">
+                                                                        <div class="row">
+                                                                            <div class="col-md-10 mx-auto col-sm-12">
+                                                                                <h6>PRODUCT BOOKING DETAIL</h6>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-6 col-md-6 col-sm-12 smTextcenter ">
+                                                                                        <p><span style="font-weight: 700;">Final Amount (USD): </span> {{data.final_amount}}</p>
+                                                                                        <p><span style="font-weight: 700;">Discount (%):</span> {{data.discount}}</p>
+                                                                                        <p><span style="font-weight: 700;">Commission (%):</span> {{data.commission}}</p>
+                                                                                    </div>
+                                                                                    <div class="col-lg-6 col-md-6 col-sm-12 smTextcenter">
+                                                                                        <p><span style="font-weight: 700;">Quantity: </span> {{data.quantity}}</p>
+                                                                                        <p><span style="font-weight: 700;">Status:</span> {{data.status}}</p>
+                                                                                        <p><span style="font-weight: 700;">Payment Mode:</span> {{data.payment_mode}}</p>
+                                                                                    </div>
+                                                                                    <div class="col-12 smTextcenter">
+                                                                                        <p><span style="font-weight: 700;">Created At:</span> {{data.created_at}}</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mt-4">
+                                                                <div class="col-12">
+                                                                    <h6>PRODUCT DETAIL</h6>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <h6>{{data.products.title}}</h6>
+                                                                </div>
+                                                                <div class="productWrapView"> 
+                                                                    {{#each data.products.product_images}}
+
+                                                                    <div class="productViewFlex">
+                                                                        <div class="productView">
+                                                                            <div class="productViewPic">
+                                                                                <img class="img-80 img-radius" src="{{this.image}}" alt="Image">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    {{/each}}
+
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <p>{{{data.products.description}}}</p> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mt-4">
+                                                                {{#each data.users}}
+                                                                    {{#ifEquals this.role 'CE'}} 
+
+                                                                        <div class="col-lg-3 col-md-3 col-sm-12">
+                                                                            <div class="profile text-center">
+                                                                                <img class="w-50" src="{{this.pimage}}" alt="Image">
+                                                                            </div>
+                                                                            <div class="profileDetail text-center mt-3">
+                                                                                <p>{{this.firstname}}</p>
+                                                                                <p>{{this.email}}</p>
+                                                                                <p>{{this.phone}}</p>
+                                                                                <p>COMMERCIAL ESTABLISHMENT</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    {{/ifEquals}}
+                                                                {{/each}}
+
+                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                    <div class="profileLeft">
+                                                                        <div class="row Product Name">
+                                                                            <div class="col-md-10 mx-auto col-sm-12">
+                                                                                <h6>SUB CATEGORY DETAIL</h6>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-md-3 col-sm-12 smTextcenter ">
+                                                                                        <div class="productvend">
+                                                                                            <div class="productvendshdw">
+                                                                                                <div class="productvenPic">
+                                                                                                    <img class="img-80" src="{{data.sub_categories.image}}" alt="Image">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-9 mx-auto col-sm-12 smTextcenter d-flex align-items-md-center">
+                                                                                        <h6>{{data.sub_categories.title}}</6>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 col-sm-12 mt-3">
+                                                                                        <p>{{{data.sub_categories.description}}}</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> script }}
+
+    </body>
+</html>

@@ -1,0 +1,115 @@
+/*======================= footer css start =======================*/
+footer {
+    width: 100%;
+    background: #28303b;
+    padding: 40px 0;
+}
+.footTitle {
+    width: 100%;
+    margin-bottom: 2.5rem;
+}
+.footTitle h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+}
+.footlogo {
+    width: 100%;
+}
+.footlogo img {
+    max-width: 150px;
+}
+.footList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footList ul li {
+    display: block;
+}
+.footList ul li a {
+    font-size: 1.4rem;
+    color: var(--white-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+.footList ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.footList ul li a i {
+    padding-right: .51rem;
+    font-size: 1.2rem;
+}
+.footpara {
+    width: 100%;
+    margin-top: 2.4rem;
+}
+.footpara p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #fff;
+}
+.foodAddress {
+    width: 100%;
+}
+.foodAddress ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.foodAddress ul li {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    line-height: 24px;
+    color: #c0cae3;
+    padding-left: 60px;
+    margin-bottom: 1.5rem;
+}
+.foodAddress ul li a {
+    color: var(--white-color);
+}
+.foodAddress ul li span {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: var(--logo-red);
+}
+.footSocial {
+    width: 100%;
+    margin-top: 2.5rem;
+}
+.footSocial ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footSocial ul li {
+    display: inline-block;
+}
+.footSocial ul li a {
+    font-size: 1.4rem;
+    color: var(--white-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+.footSocial ul li a span {
+    width: 30px;
+    height: 30px;
+    margin-right: .5rem;
+    background: #202932;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footSocial ul li a:hover {
+    text-decoration: none;
+}
+
+.footSocial ul li a i {
+    padding-right: .51rem;
+    font-size: 1.2rem;
+}
+/*======================= footer css exit =======================*/

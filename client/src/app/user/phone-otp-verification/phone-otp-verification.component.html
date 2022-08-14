@@ -1,0 +1,45 @@
+<ngx-spinner></ngx-spinner>
+<section class="loginRegister p-0">
+    <div class="loginMagenta">
+        <div class="loginIcon">
+            <img src="assets/logoicon.png">
+        </div>
+    </div>
+    <div class="loginMain">
+        <div class="loginUpper">
+            <ul class="nav nav-pills loginNav" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="pills-login-tab" data-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">OTP Verification</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                    aria-labelledby="pills-login-tab">
+                    <div class="login">
+                        <div class="loginlogo">
+                            <a href="#"><img src="assets/logoicon.png"></a>
+                        </div>
+                        <div class="loginInner">
+                            <div class="otp">
+                                <label>Enter OTP</label>
+                                <p>Enter OTP sent to {{ phoneNo_fp }}</p>
+                                <div class="otpInner">
+                                    <input id="password" type="password" class="otpInvisble" maxlength="4" size="4" />
+                                    <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="{length:4}" *ngIf="showOtpComponent" [config]="config"></ng-otp-input>
+                                    <span *ngIf="otp" class="o-t-p"></span>
+                                </div>
+                                <div class="otpbtm">
+                                    <p>Didn’t you receive only code ?</p>
+                                    <p><a style="color:rgb(201, 20, 20)" (click)="resendOtp()">Resend New Code</a></p>
+                                </div>
+                                <div class="otpBtn">
+                                    <button (click)="sendOtp()" class="btn">Next <i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

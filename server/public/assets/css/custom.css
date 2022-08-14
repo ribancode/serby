@@ -1,0 +1,110 @@
+.error{
+    color:  #ff0000;
+}
+/* ======================= product view detail css start ======================= */
+.productWrapView {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}  
+.productViewFlex {
+    width: 16.666%;
+    padding: 1rem;
+    text-align: center;
+}  
+.productView {
+    width: 100%;
+    display: flex;
+    padding: .5rem 0rem;
+    border-radius: 5px;
+    box-shadow: 0 0.2rem 0.4rem #d8d5d5;
+}
+.productView:hover {
+    box-shadow: 0rem 0.5rem 0.9rem #d8d5d5;
+}  
+.productViewPic {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+.productViewPic img {
+    max-width: 70px;
+    height: 100%;
+}
+.productViewData {
+    width: 100%;
+    margin-top: 15px;
+}
+.productViewData h4 {
+    font-size: 16px;
+}  
+/* ======================= product view detail css exit ======================= */
+
+.more-details.more-logout {
+    margin: 5px 10px 0;
+}
+.more-details.more-logout a.active {
+    background: #448aff;
+    color: #fff !important;
+}
+.more-details.more-logout a {
+    padding: 10px !important;
+}
+.more-details.more-logout a:hover {
+    background: #448aff;
+    color: #fff !important;
+}
+.more-details.more-logout a input[type="submit"] {
+    color: #000 !important;
+    transition: all ease-in 0.3s;
+}
+.more-details.more-logout a:hover input[type="submit"] {
+    color: #fff !important;
+}
+
+.productvendshdw {
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0.2rem 0.4rem #d8d5d5;
+}
+
+.productvenPic {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+.productvenPic img {
+    width: 100%;
+    height: 100%;
+}
+
+/* ======================= product booking detail css exit ======================= */
+.imgRemove {
+    position: relative;
+}
+.imgRemove a {
+    background: #456;
+    color: #fff;
+    font-size: 8px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+.productViewPic.userprofile {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.productViewPic.userprofile img{
+    height: auto;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head }}
+
+    <body>
+        {{> loader }}
+
+        <div id="pcoded" class="pcoded">
+            <div class="pcoded-overlay-box"></div>
+            <div class="pcoded-container navbar-wrapper">
+                {{> header }}
+
+                <div class="pcoded-main-container">
+                    <div class="pcoded-wrapper">
+                        {{> sidebar }}
+
+                        <div class="pcoded-content">
+                            <div class="page-header">
+                                <div class="page-block">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <div class="page-header-title">
+                                                <h5 class="m-b-10">CUSTOMERS</h5>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-block table-border-style">
+                                    <div class="table-responsive">
+                                        <table class="table" id="myTable" width="100%" cellspacing="0" data-s-dom="lrtip">
+                                            <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Name</th>
+                                                    <th>Username</th>
+                                                    <th>Email</th>
+                                                    <th>Phone</th>
+                                                    <th>OTP</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each record}}
+
+                                                <tr>
+                                                    <td>{{this.id}}</td>
+                                                    <td>{{this.firstname}}</td>
+                                                    <td>{{this.username}}</td>
+                                                    <td>{{this.email}}</td>
+                                                    <td>{{this.phone}}</td>
+                                                    <td>{{this.otp}}</td>
+                                                    <td>{{this.status}}</td>
+                                                    <td>
+                                                       {{#ifEquals this.status 'active'}}
+                                                            <a class="sweet-status" href="javascript:void(0);" data-attr-key="{{ this.id }}" data-toggle="tooltip" title="Status"><i class="fa fa-unlock close-card"></i></a>
+                                                        {{else}}
+                                                            <a class="sweet-status" href="javascript:void(0);" data-attr-key="{{ this.id }}" data-toggle="tooltip" title="Status"><i class="fa fa-lock close-card"></i></a>
+                                                        {{/ifEquals}}
+
+                                                        <form id="status-form-{{ this.id }}" action="/updateCustomerStatus/{{this.id}}" method="POST" style="display: none;"></form>
+
+                                                        <a class="sweet-delete" data-attr-key="{{ this.id }}" data-toggle="tooltip" title="Delete"><i class="fa fa-trash close-card"></i></a>
+                                                        <form id="delete-form-{{ this.id }}" action="/deleteCustomer/{{this.id}}" method="POST" style="display: none;"></form>
+
+                                                    </td>     
+                                                </tr>
+                                                {{/each}}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> script }}
+
+    </body>
+</html>

@@ -1,0 +1,154 @@
+<nav class="pcoded-navbar">
+    <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="icon-close icons"></i></a></div>
+    <div class="pcoded-inner-navbar main-menu">
+        <div class="">
+            <div class="main-menu-header">
+                <img class="img-80 img-radius" src="{{#ifNotEquals user.pimage Null}} {{user.pimage}} {{else}} /assets/images/serby.png {{/ifNotEquals}}" alt="Image">
+                <div class="user-details">
+                    <span id="more-details">{{user.firstname}}<i class="fa fa-caret-down"></i></span>
+                </div>
+            </div>
+            <div class="main-menu-content">
+                <ul class="pcoded-left-item">
+                    <li class="more-details more-logout" id="profile-list-item1">
+                        <a href="/edit-profile" class="waves-effect waves-dark" id="edit-profile">
+                            <span class="pcoded-micon"><i class="ti-user"></i></span>
+                            <span class="pcoded-mtext">Profile</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="pcoded-left-item">
+                    <li class="more-details more-logout" id="profile-list-item2">
+                        <form action="/logout" method="POST">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="ti-power-off"></i><input value="Logout" type="submit" style="border: none; background:none;"></span>
+                                <span class="pcoded-mcaret"></span>
+                            </a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li id="dashboard">
+                <a href="/dashboard" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-home"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">Dashboard</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="pcoded-hasmenu" id="users">
+                <a href="javascript:void(0)" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-user"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">Manage Users</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li id="manageCE">
+                        <a href="/manageCE" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">CE</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li id="manageCustomer">
+                        <a href="/manageCustomer" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Customers</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="pcoded-item pcoded-left-item">
+            <li id="manageCategories">
+                <a href="/manageCategories" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-view-list"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">Manage Categories</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+        <ul class="pcoded-item pcoded-left-item">
+            <li id="ceProducts">
+                <a href="/ceProducts" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-package"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">CE Products</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+        <ul class="pcoded-item pcoded-left-item">
+            <li id="ceServices">
+                <a href="/ceServices" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-layout-grid2"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">CE Services</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="pcoded-hasmenu" id="commission">
+                <a href="javascript:void(0)" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-receipt"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">Manage Commission</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li id="productCommission">
+                        <a href="/productCommission" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Products</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li id="serviceCommission">
+                        <a href="/serviceCommission" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Services</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="pcoded-hasmenu" id="bookings">
+                <a href="javascript:void(0)" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">Manage Bookings</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li id="productBookings">
+                        <a href="/productBookings" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Products</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li id="serviceBookings">
+                        <a href="/serviceBookings" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Services</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="pcoded-item pcoded-left-item">
+            <li id="payments">
+                <a href="/payments" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-shopping-cart-full"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">Manage Payments</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

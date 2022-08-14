@@ -1,0 +1,43 @@
+<section class="caSubcategoryOut p-0">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-12">
+                <div class="casubcagerybg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="homeTopslider">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-12 mx-auto">
+                <div class="bannerSearch">
+                    <form class="form-inline">
+                        <div class="form-group">
+                        <input type="text" class="form-control" id="inputPassword2" placeholder="Search for Service">
+                        </div>
+                        <button type="submit" class="btn"><img src="assets/search.png" alt=""></button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="caSubCategory">
+                    <div class="caSubCateWrap">
+
+                        <div class="caSubCateInn" *ngFor ="let item of subCategoryItem[0]">
+                            <div class="caSubPic">
+                            <img class="img-fluid rounded-circle" src="{{item.image}}" alt="">   
+                            </div>
+                            <div class="caSubText">
+                            <h3>{{item.title}}</h3>    
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

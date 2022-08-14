@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head }}
+
+    <body>
+        {{> loader }}
+
+        <div id="pcoded" class="pcoded">
+            <div class="pcoded-overlay-box"></div>
+            <div class="pcoded-container navbar-wrapper">
+                {{> header }}
+
+                <div class="pcoded-main-container">
+                    <div class="pcoded-wrapper">
+                        {{> sidebar }}
+
+                        <div class="pcoded-content">
+                            <div class="page-header">
+                                <div class="page-block">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <div class="page-header-title">
+                                                <h5 class="m-b-10">DASHBOARD</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pcoded-inner-content">
+                                <div class="main-body">
+                                    <div class="page-wrapper">
+                                        <div class="page-body">
+                                            <div class="row">
+                                                <div class="col-xl-4 col-md-12">
+                                                    <div class="card mat-clr-stat-card text-white blue ">
+                                                        <div class="card-block">
+                                                            <div class="row">
+                                                                <div class="col-3 text-center bg-c-blue">
+                                                                    <i class="far fa-user mat-icon f-24"></i>
+                                                                </div>
+                                                                <div class="col-9 cst-cont">
+                                                                    <h5>{{total}}</h5>
+                                                                    <p class="m-b-0">TOTAL USERS</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-md-12">
+                                                    <div class="card mat-clr-stat-card text-white blue">
+                                                        <div class="card-block">
+                                                            <div class="row">
+                                                                <div class="col-3 text-center bg-c-blue">
+                                                                    <i class="far fa-user mat-icon f-24"></i>
+                                                                </div>
+                                                                <div class="col-9 cst-cont">
+                                                                    <h5>{{CE}}</h5>
+                                                                    <p class="m-b-0">COMMERCIAL ESTABLISHMENT</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-md-12">
+                                                    <div class="card mat-clr-stat-card text-white blue ">
+                                                        <div class="card-block">
+                                                            <div class="row">
+                                                                <div class="col-3 text-center bg-c-blue">
+                                                                    <i class="far fa-user mat-icon f-24"></i>
+                                                                </div>
+                                                                <div class="col-9 cst-cont">
+                                                                    <h5>{{Customer}}</h5>
+                                                                    <p class="m-b-0">CUSTOMERS</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-md-12">
+                                                    <div class="card mat-stat-card">
+                                                        <div class="card-block">
+                                                            <div class="row align-items-center b-b-default">
+                                                                <div class="col-sm-6 b-r-default p-b-20 p-t-20">
+                                                                    <div class="row align-items-center text-center">
+                                                                        <div class="col-4 p-r-0">
+                                                                            <i class="fas fa-align-justify text-c-purple f-24"></i>
+                                                                        </div>
+                                                                        <div class="col-8 p-l-0">
+                                                                            <h5>{{categories}}</h5>
+                                                                            <p class="text-muted m-b-0">Categories</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6 p-b-20 p-t-20">
+                                                                    <div class="row align-items-center text-center">
+                                                                        <div class="col-4 p-r-0">
+                                                                            <i class="fas fa-align-left text-c-green f-24"></i>
+                                                                        </div>
+                                                                        <div class="col-8 p-l-0">
+                                                                            <h5>{{sub_categories}}</h5>
+                                                                            <p class="text-muted m-b-0">Sub Categories</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row align-items-center">
+                                                                <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
+                                                                    <div class="row align-items-center text-center">
+                                                                        <div class="col-4 p-r-0">
+                                                                            <i class="fas fa-signal text-c-red f-24"></i>
+                                                                        </div>
+                                                                        <div class="col-8 p-l-0">
+                                                                            <h5>350</h5>
+                                                                            <p class="text-muted m-b-0">Returns</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6 p-b-20 p-t-20">
+                                                                    <div class="row align-items-center text-center">
+                                                                        <div class="col-4 p-r-0">
+                                                                            <i class="fas fa-wifi text-c-blue f-24"></i>
+                                                                        </div>
+                                                                        <div class="col-8 p-l-0">
+                                                                            <h5>100%</h5>
+                                                                            <p class="text-muted m-b-0">Connections</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-md-12">
+                                                    <div class="card mat-stat-card">
+                                                        <div class="card-block">
+                                                            <div class="row align-items-center b-b-default">
+                                                                <div class="col-sm-6 b-r-default p-b-20 p-t-20">
+                                                                    <div class="row align-items-center text-center">
+                                                                        <div class="col-4 p-r-0">
+                                                                            <i class="far fa-file-alt text-c-purple f-24"></i>
+                                                                        </div>
+                                                                        <div class="col-8 p-l-0">
+                                                                            <h5>{{products}}</h5>
+                                                                            <p class="text-muted m-b-0">Products</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6 p-b-20 p-t-20">
+                                                                    <div class="row align-items-center text-center">
+                                                                        <div class="col-4 p-r-0">
+                                                                            <i class="far fa-file-alt text-c-green f-24"></i>
+                                                                        </div>
+                                                                        <div class="col-8 p-l-0">
+                                                                            <h5>{{services}}</h5>
+                                                                            <p class="text-muted m-b-0">Services</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row align-items-center">
+                                                                <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
+                                                                    <div class="row align-items-center text-center">
+                                                                        <div class="col-4 p-r-0">
+                                                                            <i class="far fa-file-alt text-c-red f-24"></i>
+                                                                        </div>
+                                                                        <div class="col-8 p-l-0">
+                                                                            <h5>2000+</h5>
+                                                                            <p class="text-muted m-b-0">Files</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6 p-b-20 p-t-20">
+                                                                    <div class="row align-items-center text-center">
+                                                                        <div class="col-4 p-r-0">
+                                                                            <i class="far fa-envelope-open text-c-blue f-24"></i>
+                                                                        </div>
+                                                                        <div class="col-8 p-l-0">
+                                                                            <h5>120</h5>
+                                                                            <p class="text-muted m-b-0">Mails</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="styleSelector"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> script }}
+
+    </body>
+</html>

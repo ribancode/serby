@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head }}
+
+    <body>
+        {{> loader }}
+
+        <div id="pcoded" class="pcoded">
+            <div class="pcoded-overlay-box"></div>
+            <div class="pcoded-container navbar-wrapper">
+                {{> header }}
+
+                <div class="pcoded-main-container">
+                    <div class="pcoded-wrapper">
+                        {{> sidebar }}
+
+                        <div class="pcoded-content">
+                            <div class="page-header">
+                                <div class="page-block">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <div class="page-header-title">
+                                                <h5 class="m-b-10">MANAGE PAYMENTS</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Payments</h5>
+                                </div>         
+                                <div class="card-block table-border-style">
+                                    <div class="table-responsive">
+                                        <table class="table" id="myTable" width="100%" cellspacing="0" data-s-dom="lrtip">
+                                            <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>User</th>
+                                                    <th>Transaction Id</th>
+                                                    <th>Balance Transaction</th>
+                                                    <th>Final Amount (USD)</th>
+                                                    <th>status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each data}}
+
+                                                <tr>
+                                                    <td>{{this.id}}</td>
+                                                    <td>{{this.user_id}}</td>
+                                                    <td>{{this.txn_id}}</td>
+                                                    <td>{{this.balance_transaction}}</td>
+                                                    <td>{{this.final_amount}}</td>
+                                                    <td>{{this.status}}</td>
+                                                    <td>
+                                                        <a href="/viewPayment/{{this.id}}" data-toggle="tooltip" title="View"><i class="fa fa-eye close-card"></i></a>
+                                                    </td>
+                                                </tr>
+                                                {{/each}}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> script }}
+
+    </body>
+</html>

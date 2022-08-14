@@ -1,0 +1,6 @@
+@import url('../../../CE-layout.css');
+
+.navbar-logo img.img-fluid {
+    max-width: 140px;
+    margin-left: 15px;
+}

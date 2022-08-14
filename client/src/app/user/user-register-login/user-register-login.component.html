@@ -1,0 +1,155 @@
+<ngx-spinner></ngx-spinner>
+<section class="loginRegister p-0">
+    <div class="loginMagenta">
+        <div class="loginIcon">
+            <img src="assets/logoicon.png">
+        </div>
+    </div>
+    <div class="loginMain">
+        <div class="loginUpper">
+            <ul class="nav nav-pills loginNav" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a #signInTabTrigger class="nav-link active" id="pills-login-tab" data-toggle="pill"
+                        href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Sign In</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a #signUpTabTrigger class="nav-link" id="pills-register-tab" data-toggle="pill" href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false">Sign Up</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                    aria-labelledby="pills-login-tab">
+                    <div class="login">
+                        <div class="loginlogo">
+                            <a href="#"><img src="assets/logoicon.png"></a>
+                        </div>
+                        <div class="loginInner">
+                            <form [formGroup]="loginUserForm" (ngSubmit)="submitLoginData()">
+                                <div class="logingroup">
+                                    <label>Username/Email ID</label>
+                                    <mat-form-field loginemail appearance="outline">
+                                        <input matInput formControlName="username" required>
+                                        <mat-error *ngIf="loginUserForm.get('username').hasError('required')"> Please enter your username/email.</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="logingroup m-0">
+                                    <label>Password</label>
+                                    <mat-form-field class="example-full-width" appearance="outline">
+                                        <input matInput  [type]="fieldTextType ? 'text' : 'password'"
+                                            formControlName="password" autocomplete="off" required>
+                                            <i class="fa fa-eye-slash"  (click)="toggleFieldTextType()"></i>
+                                        <mat-error *ngIf="loginUserForm.get('password').hasError('required')">Please enter your password. </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <p routerLink="forgot-password" style="margin-top: 10px;"><a
+                                        (click)="moveToForgotPass()">Forgot Password?</a></p>
+                                <div class="logingroup m-0">
+                                    <button class="btn" type="submit">Login</button>
+                                </div>
+                                <div class="signwith">
+                                    <p>Sign up with</p>
+                                </div>
+                                <div class="loginSocial">
+                                    <a href="#"><img src="assets/fb.png"></a>
+                                    <a href="#"><img src="assets/google.png"></a>
+                                </div>
+                                <div class="accounthave">
+                                    <p>Don't have an Account? <a (click)="signUpTabTrigger.click()">Sign Up</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
+                    <div class="login signupManage">
+                        <div class="loginlogo">
+                            <a href="#"><img src="assets/logoicon.png"></a>
+                        </div>
+                        <div class="loginInner">
+                            <form [formGroup]="signUpUserForm" (ngSubmit)="submitSignupData()">
+                                <div class="logingroup">
+                                    <label>Full Name</label>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput formControlName="firstname" required>
+                                        <mat-error *ngIf="signUpUserForm.get('firstname').hasError('required')"> Please enter your name. </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="logingroup">
+                                    <label>Email ID</label>
+                                    <mat-form-field loginemail appearance="outline">
+                                        <input matInput (input)="inputValidator($event)" formControlName="email" required [(ngModel)]="email">
+                                        <mat-error *ngIf="signUpUserForm.get('email').hasError('required')"> Please enter your email. </mat-error>
+                                        <mat-error *ngIf="signUpUserForm.get('email').hasError('pattern')"> Please enter valid email address.</mat-error>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="logingroup">
+                                    <label>User Name</label>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput value="{{userName}}" formControlName="username" required>
+                                        <mat-error *ngIf="signUpUserForm.get('username').hasError('required')"> Please enter your username. </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="logingroup">
+                                    <label>Mobile Number</label>
+                                    <mat-form-field appearance="outline">
+                                        <ngx-mat-intl-tel-input
+                                            [preferredCountries]="['us']"
+                                            [enablePlaceholder]="true"
+                                            [enableSearch]="true"
+                                            [phoneValidation]="true"
+                                            name="phone"
+                                            formControlName="phone" #phone>
+                                        </ngx-mat-intl-tel-input>
+                                        <mat-error *ngIf="signUpUserForm.get('phone').hasError('required')"> Please enter your mobile number. </mat-error>
+                                        <mat-error *ngIf="signUpUserForm.get('phone').hasError('validatePhoneNumber')">Invalid Number
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="logingroup">
+                                    <label>Password</label>
+                                    <mat-form-field class="example-full-width password" appearance="outline">        
+                                        <input matInput  [type]="fieldTextType ? 'text' : 'password'"
+                                            formControlName="password" autocomplete="off" required>
+                                                <i class="fa fa-eye-slash"  (click)="toggleFieldTextType()"></i>
+                                        <mat-error *ngIf="signUpUserForm.get('password').hasError('required')">Please enter your password. </mat-error>
+                                    </mat-form-field>
+                                    <mat-error *ngIf="signUpUserForm.get('password').hasError('pattern')">
+                                        <li>Password should be of 6 letters,</li>
+                                        <li>Contain atleast one Capital letter,</li>
+                                        <li>Alphanumeric a-z,0-9 and</li>
+                                        <li>One special character</li>
+                                    </mat-error>
+                                </div>
+
+                                <div class="logingroup">
+                                    <label>Confirm Password</label>
+                                    <mat-form-field class="example-full-width" appearance="outline">
+                                        <input matInput [type]="fieldPassType ? 'text' : 'password'" formControlName="confirmPassword" autocomplete="off" required>
+                                        <i class="fa fa-eye-slash"  (click)="toggleFieldPassType()"></i>
+                                        <mat-error *ngIf="signUpUserForm.get('confirmPassword').hasError('required')">  Please enter your confirm password. </mat-error>
+                                        <mat-error *ngIf="signUpUserForm.get('confirmPassword').hasError('equalTo')"> Password didn't match. </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="logingroup">
+                                    <button class="btn" type="submit">Sign Up</button>
+                                </div>
+                                <div class="signwith">
+                                    <p>Sign up with</p>
+                                </div>
+                                <div class="loginSocial">
+                                    <a href="#"><img src="assets/fb.png"></a>
+                                    <a href="#"><img src="assets/google.png"></a>
+                                </div>
+                                <div class="accounthave">
+                                    <p>Already have an Account? <a (click)="signInTabTrigger.click()">Sign In</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

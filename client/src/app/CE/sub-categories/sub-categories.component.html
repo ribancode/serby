@@ -1,0 +1,52 @@
+<ngx-spinner></ngx-spinner>
+<section class="categoryOuter p-0">
+    <div class="container-fluid">
+        <div class="categoryBanner">
+            <div class="catleftBanner">
+                <div class="categoryTitle">
+                    <h3>What Work do you do?</h3>
+                </div>
+                <div class="categorySearch">
+                    <button class="btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text" placeholder="Search plumber, electrician etc">
+                </div>
+            </div>
+            <div class="catrightBanner">
+                <img src="assets/categorylarge.png">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="category">
+    <div class="container">
+        <form [formGroup]="subCategoriesForm" (ngSubmit)="submitSubCategories()">
+            <div class="subCategory">
+                <div class="subCatTitle">
+                    <h4>Sub Categories</h4>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="subCategoryWrap">
+                            <div *ngFor="let list of subCaegoriesList[0]" class="popularInn subCategoryItem">
+                                <input type="checkbox" id="category-{{ list.id }}-1" attr.data-category-id="{{ list.category_id }}" class="category-check" value="{{ list.id }}" (change)="onSubCategoryChange($event)" >
+                                <label class="subItemInn" attr.for="category-{{ list.id }}-1">
+                                    <div class="subCatImage">
+                                        <img src="{{list.image}}" alt="">
+                                    </div>
+                                    <div class="subCatTxt">
+                                        <h4>{{list.title}}</h4>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catBtn" *ngIf="this.subCategoriesForm.controls['subCategoryArray'].value.length">
+                        <button type="submit" class="btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,100 @@
+section.caSubcategoryOut {
+    width: 100%;
+}
+.casubcagerybg {
+    background: url('../../../assets/casubcategory.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+.casubcagerybg:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgb(14 14 14 / 65%);
+} 
+
+.caSubCateWrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.caSubCateInn {
+    width: 14.4%;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0.2rem 0.4rem #d8d5d5;
+    transition: all .4s ease;
+    cursor: pointer;
+}
+.caSubCateInn:hover {
+    box-shadow: 0 0.4rem 0.8rem #d8d5d5;
+}
+
+.caSubPic {
+    width: 100%;
+    text-align: center;
+}
+.caSubPic img {
+    max-width: 100px;
+}
+
+.caSubText {
+    width: 100%;
+}
+.caSubText h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    margin-top: .5rem;
+    margin-bottom: 0;
+}
+
+/* ======================== media query start ======================== */
+@media screen and (max-width: 1199px) {
+    .caSubCateInn {
+        width: 13.97%;
+    }  
+}
+
+@media screen and (max-width: 991px) {
+    .caSubCateWrap {
+        flex-wrap: wrap;
+    }
+
+    .caSubCateInn {
+        width: 21.7%;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+.caSubCateInn{
+    width: 29.4%;
+}
+
+}
+
+@media screen and (max-width: 575px) {
+    .caSubCateWrap {
+        gap: 15px;
+    }
+    .caSubCateInn{
+        width: 100%;
+    }
+    
+    
+    }
+
+/* ======================== media query exit ======================== */
+ 

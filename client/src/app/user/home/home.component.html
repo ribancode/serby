@@ -1,0 +1,477 @@
+<section class="bannerOuter p-0">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-12">
+                <div class="bannerbg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="homeTopslider">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5 mx-auto">
+                <div class="bannerSearch">
+                    <form class="form-inline">
+                        <div class="form-group">
+                        <input type="text" class="form-control" id="inputPassword2" placeholder="Search for Service">
+                        </div>
+                        <button type="submit" class="btn"><img src="assets/search.png" alt=""></button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-10 mx-auto">
+                <div class="homeTopCarousel">
+                    <owl-carousel-o [options]="customOptions">
+                        <ng-template *ngFor="let list of categoriesList" carouselSlide>
+                            <div class="topCaro">
+                                <a (click)="categoryItem(list)">
+                                <div class="topCaroShadow">
+                                    <div class="topCaroPicture">
+                                        <!-- test -->
+                                        <img class="img-fluid rounded-circle" src="{{list.image}}" alt="">
+
+                                    <!-- end -->
+                                    <!-- <img class="img-fluid rounded-circle" src="{{list.image}}" alt="">    -->
+                                    </div>
+                                    <div class="topCaroText">
+                                    <h3>{{list.title}}</h3>   
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        </ng-template> 
+                      </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="appliance">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-11 mx-auto">
+                <div class="applianceTitle">
+                    <h2>Appliance</h2>
+                </div>
+                <div class="carouselAppliance">
+                    <owl-carousel-o [options]="customOptions2">
+                        <ng-template carouselSlide>
+                            <div class="applianceCaro">
+                                <div class="appliancePicture">
+                                <img class="img-fluid" src="assets/appliance1.png" alt="">   
+                                </div>
+                                <div class="applianceText">
+                                <h3>AC Service and Repaire</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>  
+                        <ng-template carouselSlide>
+                            <div class="applianceCaro">
+                                <div class="appliancePicture">
+                                <img class="img-fluid" src="assets/appliance2.png" alt="">   
+                                </div>
+                                <div class="applianceText">
+                                <h3>Car Service and Repaire</h3>
+                                <p>Upto 40% off</p>   
+                                </div>
+                            </div>
+                        </ng-template> 
+                        <ng-template carouselSlide>
+                            <div class="applianceCaro">
+                                <div class="appliancePicture">
+                                <img class="img-fluid" class="img-fluid" src="assets/appliance3.png" alt="">   
+                                </div>
+                                <div class="applianceText">
+                                <h3>Doctor</h3>
+                                <p>Upto 40% off</p>     
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="applianceCaro">
+                                <div class="appliancePicture">
+                                <img class="img-fluid" class="img-fluid" src="assets/appliance3.png" alt="">   
+                                </div>
+                                <div class="applianceText">
+                                <h3>Doctor</h3>
+                                <p>Upto 40% off</p>     
+                                </div>
+                            </div>
+                        </ng-template> 
+                        <ng-template carouselSlide>
+                            <div class="applianceCaro">
+                                <div class="appliancePicture">
+                                <img class="img-fluid" class="img-fluid" src="assets/appliance3.png" alt="">   
+                                </div>
+                                <div class="applianceText">
+                                <h3>Doctor</h3>
+                                <p>Upto 40% off</p>     
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="applianceCaro">
+                                <div class="appliancePicture">
+                                <img class="img-fluid" class="img-fluid" src="assets/appliance3.png" alt="">   
+                                </div>
+                                <div class="applianceText">
+                                <h3>Doctor</h3>
+                                <p>Upto 40% off</p>     
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="applianceCaro">
+                                <div class="appliancePicture">
+                                <img class="img-fluid" class="img-fluid" src="assets/appliance3.png" alt="">   
+                                </div>
+                                <div class="applianceText">
+                                <h3>Doctor</h3>
+                                <p>Upto 40% off</p>     
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="applianceCaro">
+                                <div class="appliancePicture">
+                                <img class="img-fluid" src="assets/appliance3.png" alt="">   
+                                </div>
+                                <div class="applianceText">
+                                <h3>Doctor</h3>
+                                <p>Upto 40% off</p>     
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="applianceCaro">
+                                <div class="appliancePicture">
+                                <img class="img-fluid" src="assets/appliance3.png" alt="">   
+                                </div>
+                                <div class="applianceText">
+                                <h3>Doctor</h3>
+                                <p>Upto 40% off</p>     
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="applianceCaro">
+                                <div class="appliancePicture">
+                                <img class="img-fluid" src="assets/appliance3.png" alt="">   
+                                </div>
+                                <div class="applianceText">
+                                <h3>Doctor</h3>
+                                <p>Upto 40% off</p>     
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="applianceCaro">
+                                <div class="appliancePicture">
+                                <img class="img-fluid" src="assets/appliance3.png" alt="">   
+                                </div>
+                                <div class="applianceText">
+                                <h3>Doctor</h3>
+                                <p>Upto 40% off</p>     
+                                </div>
+                            </div>
+                        </ng-template>
+                      </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cleaning">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-11 mx-auto">
+                <div class="clearningTitle">
+                    <h2>Cleaning & Pest Control</h2>
+                </div>
+                <div class="carouselcleaning">
+                    <owl-carousel-o [options]="customOptionsClean">
+                        <ng-template carouselSlide>
+                            <div class="cleaningCaro">
+                                <div class="cleaningPicture">
+                                <img class="img-fluid" src="assets/cleaning1.png" alt="">   
+                                </div>
+                                <div class="cleaningText">
+                                <h3>Room Cleaning</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>  
+                        
+                        <ng-template carouselSlide>
+                            <div class="cleaningCaro">
+                                <div class="cleaningPicture">
+                                <img class="img-fluid" src="assets/cleaning1.png" alt="">   
+                                </div>
+                                <div class="cleaningText">
+                                <h3>Room Cleaning</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+
+                        <ng-template carouselSlide>
+                            <div class="cleaningCaro">
+                                <div class="cleaningPicture">
+                                <img class="img-fluid" src="assets/cleaning1.png" alt="">   
+                                </div>
+                                <div class="cleaningText">
+                                <h3>Room Cleaning</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+
+                        <ng-template carouselSlide>
+                            <div class="cleaningCaro">
+                                <div class="cleaningPicture">
+                                <img class="img-fluid" src="assets/cleaning1.png" alt="">   
+                                </div>
+                                <div class="cleaningText">
+                                <h3>Room Cleaning</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="cleaningCaro">
+                                <div class="cleaningPicture">
+                                <img class="img-fluid" src="assets/cleaning1.png" alt="">   
+                                </div>
+                                <div class="cleaningText">
+                                <h3>Room Cleaning</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="cleaningCaro">
+                                <div class="cleaningPicture">
+                                <img class="img-fluid" src="assets/cleaning1.png" alt="">   
+                                </div>
+                                <div class="cleaningText">
+                                <h3>Room Cleaning</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="cleaningCaro">
+                                <div class="cleaningPicture">
+                                <img class="img-fluid" src="assets/cleaning1.png" alt="">   
+                                </div>
+                                <div class="cleaningText">
+                                <h3>Room Cleaning</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="cleaningCaro">
+                                <div class="cleaningPicture">
+                                <img class="img-fluid" src="assets/cleaning1.png" alt="">   
+                                </div>
+                                <div class="cleaningText">
+                                <h3>Room Cleaning</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="cleaningCaro">
+                                <div class="cleaningPicture">
+                                <img class="img-fluid" src="assets/cleaning1.png" alt="">   
+                                </div>
+                                <div class="cleaningText">
+                                <h3>Room Cleaning</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="cleaningCaro">
+                                <div class="cleaningPicture">
+                                <img class="img-fluid" src="assets/cleaning1.png" alt="">   
+                                </div>
+                                <div class="cleaningText">
+                                <h3>Room Cleaning</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="cleaningCaro">
+                                <div class="cleaningPicture">
+                                <img class="img-fluid" src="assets/cleaning1.png" alt="">   
+                                </div>
+                                <div class="cleaningText">
+                                <h3>Room Cleaning</h3>  
+                                <p>Upto 50% off</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+                      </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="customer pt-0">
+    <div class="container-fluid p-0">
+        <div class="customerFlex">
+            <div class="customerLeft">
+                <div class="customerquote">
+                    <img class="img-fluid" src="assets/homequate.png" alt="">  
+                </div>
+                <div class="custoTxt">
+                    <h3>Customer</h3>
+                    <p>Stories</p>
+                </div>
+            </div>
+            <div class="customerRight">
+                <div class="customerBox">
+                    <owl-carousel-o [options]="customOptionsCustomer">
+                        <ng-template carouselSlide>
+                            <div class="customerCaro">
+                                <div class="customerPicture">
+                                <img class="img-fluid" src="assets/customer1.png" alt="">   
+                                </div>
+                                <div class="customerText">
+                                <h3>John Doe</h3>  
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+                                </div>
+                            </div>
+                        </ng-template>  
+                        
+                        <ng-template carouselSlide>
+                            <div class="customerCaro">
+                                <div class="customerPicture">
+                                <img class="img-fluid" src="assets/customer1.png" alt="">   
+                                </div>
+                                <div class="customerText">
+                                <h3>John Doe</h3>  
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+                                </div>
+                            </div>
+                        </ng-template>  
+
+                        <ng-template carouselSlide>
+                            <div class="customerCaro">
+                                <div class="customerPicture">
+                                <img class="img-fluid" src="assets/customer1.png" alt="">   
+                                </div>
+                                <div class="customerText">
+                                <h3>John Doe</h3>  
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+                                </div>
+                            </div>
+                        </ng-template> 
+                        <ng-template carouselSlide>
+                            <div class="customerCaro">
+                                <div class="customerPicture">
+                                <img class="img-fluid" src="assets/customer1.png" alt="">   
+                                </div>
+                                <div class="customerText">
+                                <h3>John Doe</h3>  
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+                                </div>
+                            </div>
+                        </ng-template> 
+                        <ng-template carouselSlide>
+                            <div class="customerCaro">
+                                <div class="customerPicture">
+                                <img class="img-fluid" src="assets/customer1.png" alt="">   
+                                </div>
+                                <div class="customerText">
+                                <h3>John Doe</h3>  
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+                                </div>
+                            </div>
+                        </ng-template> 
+                        <ng-template carouselSlide>
+                            <div class="customerCaro">
+                                <div class="customerPicture">
+                                <img class="img-fluid" src="assets/customer1.png" alt="">   
+                                </div>
+                                <div class="customerText">
+                                <h3>John Doe</h3>  
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="customerCaro">
+                                <div class="customerPicture">
+                                <img class="img-fluid" src="assets/customer1.png" alt="">   
+                                </div>
+                                <div class="customerText">
+                                <h3>John Doe</h3>  
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="customerCaro">
+                                <div class="customerPicture">
+                                <img class="img-fluid" src="assets/customer1.png" alt="">   
+                                </div>
+                                <div class="customerText">
+                                <h3>John Doe</h3>  
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+                                </div>
+                            </div>
+                        </ng-template>
+                    
+                    </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="downloadApp pb-0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="downloadAppAB">
+                    <div class="downloadAppText">
+                        <h2>Download Mobile App</h2>
+                    </div>
+                    <div class="downloadBox">
+                        <div class="downloadInput">
+                            <div class="downloadGroup">
+                                <form>
+                                    <div class="downloadIn">
+                                        <input formControlName="phone">
+                                    </div>
+                                    <button class="btn" type="submit">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="downloadAppStore">
+                        <div class="appStore">
+                            <a href="#"><img alt="" class="img-fluid" src="assets/appstore.png"></a>
+                        </div>
+                        <div class="googlePlay">
+                            <a href="#"><img alt="" class="img-fluid" src="assets/googleplay.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 mx-auto col-md-6 col-sm-12">
+                <div class="downloadAppBC">
+                    <img alt="" class="img-fluid" src="assets/mobile.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

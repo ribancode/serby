@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head }}
+
+    <body>
+        {{> loader }}
+
+        <div id="pcoded" class="pcoded">
+            <div class="pcoded-overlay-box"></div>
+            <div class="pcoded-container navbar-wrapper">
+                {{> header }}
+
+                <div class="pcoded-main-container">
+                    <div class="pcoded-wrapper">
+                        {{> sidebar }}
+
+                        <div class="pcoded-content">
+                            <div class="page-header">
+                                <div class="page-block">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <div class="page-header-title">
+                                                <h5 class="m-b-10">MY PROFILE</h5>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header d-flex align-items-center justify-content-between">
+                                    <h5>Edit Profile</h5>
+                                    <a href="/change-password" class="waves-effect waves-dark">
+                                        <span><i class="fa fa-pencil" aria-hidden="true"></i> Change Password</span>
+                                    </a>
+                                </div>         
+                                <div class="card-block">
+                                    <form action="/update-profile" method="POST" enctype="multipart/form-data" id="editAdminProfile">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="col-sm-12 col-form-label">Full Name</label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" name="firstname" value="{{data.firstname}}" class="form-control" autocomplete="off" required="true">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-12 col-form-label">Email</label>
+                                                <div class="col-sm-12">
+                                                    <input disabled="true" type="text" name="email" value="{{data.email}}" class="form-control" autocomplete="off" required="true">
+                                                </div>
+                                            </div>
+                                            {{#if data.pimage}}
+                                            <div class="productViewFlex">
+                                                <div class="imgRemove">
+                                                        <a href="/delete-profile-image/{{data.id}}" data-toggle="tooltip" title="Remove"><i class="ti-close"></i></a>
+                                                    </div>
+                                                <div class="productView">
+                                                    <div class="productViewPic userprofile">
+                                                        <img class="img-80 img-radius" src="{{data.pimage}}" alt="Image">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{/if}}
+                                            <div class="form-group">
+                                                <label class="col-sm-12 col-form-label">Image</label>
+                                                <div class="col-sm-12">
+                                                    <input type="file" name="pimage" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <button type="submit" class="py-2 btn btn-primary waves-effect waves-light">Update</button>
+                                                    <a href="javascript:history.back()" class="py-2 btn btn-info waves-effect waves-light text-white">Cancel</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> script }}
+
+    </body>
+</html>

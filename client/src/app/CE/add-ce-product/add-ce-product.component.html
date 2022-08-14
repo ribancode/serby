@@ -1,0 +1,19 @@
+<h2> Add New Product</h2>
+
+<mat-dialog-content class="addProduct">
+    <mat-form-field appearance="fill">
+        <mat-label>Input</mat-label>
+        <input type ="text" matInput [(ngModel)]="title">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="description"></textarea>
+    </mat-form-field>
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Image</mat-label>
+    </mat-form-field> -->
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions>

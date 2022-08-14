@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head }}
+
+    <body>
+        {{> loader }}
+
+        <div id="pcoded" class="pcoded">
+            <div class="pcoded-overlay-box"></div>
+            <div class="pcoded-container navbar-wrapper">
+                {{> header }}
+
+                <div class="pcoded-main-container">
+                    <div class="pcoded-wrapper">
+                        {{> sidebar }}
+
+                        <div class="pcoded-content">
+                            <!-- Page-header start -->
+                            <div class="page-header">
+                                <div class="page-block">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <div class="page-header-title">
+                                                <h5 class="m-b-10">COMMERCIAL ESTABLISHMENT PRODUCTS</h5>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Page-header end -->
+                            <div class="card">
+                                <div class="card-block table-border-style">
+                                    <div class="table-responsive">
+                                        <table class="table" id="myTable" width="100%" cellspacing="0" data-s-dom="lrtip">
+                                            <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Title</th>
+                                                    <th>Amount (USD)</th>
+                                                    <th>Discount (%)</th>
+                                                    <th>Final Amount (USD)</th>
+                                                    <th>Is Approved</th>
+                                                    <th>Status</th>
+                                                    <th>CE</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each data}}
+
+                                                <tr>
+                                                    <td>{{this.id}}</td>
+                                                    <td>{{this.title}}</td>
+                                                    <td>{{this.amount}}</td>
+                                                    <td>{{this.discount}}</td>
+                                                    <td>{{this.final_amount}}</td>
+                                                    <td>{{#ifEquals this.is_approved '0'}} No {{else}} Yes {{/ifEquals}}</td>
+                                                    <td>{{this.status}}</td>
+                                                    <td>{{this.email}}</td>
+                                                    <td>
+                                                        {{#ifEquals this.is_approved '0'}}
+                                                            <a class="sweet-approve" data-attr-key="{{ this.id }}" data-toggle="tooltip" title="Approve"><i class="fa fa-check-circle close-card"></i></a>
+                                                            <form id="approve-form-{{ this.id }}" action="/product/approve/{{this.id}}" method="POST" style="display: none;"></form>
+                                                        {{/ifEquals}}
+
+                                                        <a href="/ceProducts/view/{{this.id}}" data-toggle="tooltip" title="View"><i class="fa fa-eye close-card"></i></a>
+
+                                                        <a class="sweet-delete" data-attr-key="{{ this.id }}" data-toggle="tooltip" title="Delete"><i class="fa fa-trash close-card"></i></a>
+                                                        <form id="delete-form-{{ this.id }}" action="/product/delete/{{this.id}}" method="POST" style="display: none;"></form>
+                                                    </td>
+                                                </tr>
+                                                {{/each}}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       {{> script }}
+
+    </body>
+</html>

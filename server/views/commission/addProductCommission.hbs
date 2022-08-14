@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head }}
+
+    <body>
+        {{> loader }}
+
+        <div id="pcoded" class="pcoded">
+            <div class="pcoded-overlay-box"></div>
+            <div class="pcoded-container navbar-wrapper">
+                {{> header }}
+
+                <div class="pcoded-main-container">
+                    <div class="pcoded-wrapper">
+                        {{> sidebar }}
+
+                        <div class="pcoded-content">
+                            <div class="page-header">
+                                <div class="page-block">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8">
+                                            <div class="page-header-title">
+                                                <h5 class="m-b-10">MANAGE COMMISSION</h5>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5>Add Product Commission</h5>
+                                            </div>
+                                            <div class="card-block">
+                                                <form action="/productCommission" method="POST" id="productCommissionForm">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-12 col-form-label">Commission (%)</label>
+                                                            <div class="col-sm-12">
+                                                                <input type="text" name="commission" value="{{data.commission}}" class="form-control decimalNumber" autocomplete="off" required="true">
+                                                                <input type="hidden" name="is_product" value="1">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <button type="submit" class="py-2 btn btn-primary waves-effect waves-light">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> script }}
+
+    </body>
+</html>

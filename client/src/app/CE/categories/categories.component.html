@@ -1,0 +1,48 @@
+<ngx-spinner></ngx-spinner>
+<section class="categoryOuter p-0">
+    <div class="container-fluid">
+        <div class="categoryBanner">
+            <div class="catleftBanner">
+                <div class="categoryTitle">
+                    <h3>What Work do you do?</h3>
+                </div>
+                <div class="categorySearch">
+                    <button class="btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text" placeholder="Search plumber, electrician etc">
+                </div>
+            </div>
+            <div class="catrightBanner">
+                <img src="assets/categorylarge.png">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="category">
+    <div class="container">
+        <form [formGroup]="categoriesForm" (ngSubmit)="submitCatgories()">
+            <div class="popularCategory">
+                <div class="popularCatTitle">
+                    <h4>All categories</h4>
+                </div>
+                <div class="row">
+                    <div *ngFor="let list of categoriesList | slice:0:popularCategoriesLimit" class="col-lg-2 col-md-3 col-sm-4 col-12 popularInn">
+                        <input type="checkbox" id="category-{{ list.id }}" class="category-check" value="{{ list.id }}" (change)="onCategoryChange($event)" >
+                        <label class="popularBox" attr.for="category-{{ list.id }}">
+                            <div class="popularImage">
+                                <img src="{{list.image}}" alt="">
+                            </div>
+                            <div class="popularTxt">
+                                <h4>{{list.title}}</h4>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="catBtn" *ngIf="this.categoriesForm.controls['categoryArray'].value.length">
+                    <button type="submit" class="btn">Next</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
